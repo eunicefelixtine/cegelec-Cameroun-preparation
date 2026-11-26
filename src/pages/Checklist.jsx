@@ -5,7 +5,7 @@ import { useStore } from '../lib/store.jsx'
 export default function Checklist() {
   const { state, update } = useStore()
   const done = Object.values(state.checklist).filter(Boolean).length
-  const toggle = (id) => update({ checklist: { ...state.checklist, [id]: !state.checklist[id] } })
+  const toggle = (id) => update((st) => ({ checklist: { ...st.checklist, [id]: !st.checklist[id] } }))
 
   return (
     <>

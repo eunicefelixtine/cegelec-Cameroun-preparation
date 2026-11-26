@@ -43,7 +43,7 @@ export default function Navbar({ current }) {
         <div className="nav-actions">
           <button
             className="icon-btn"
-            onClick={() => update({ dark: !state.dark })}
+            onClick={() => update((s) => ({ dark: !s.dark }))}
             aria-label="Changer de thème"
             title="Thème clair / sombre"
           >

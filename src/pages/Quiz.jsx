@@ -38,7 +38,7 @@ export default function Quiz() {
             {QUIZ_THEMES.map((t) => {
               const on = themes.includes(t.id)
               return (
-                <button key={t.id} className={`theme ${on ? 'on' : ''}`} onClick={() => setThemes(on ? themes.filter((x) => x !== t.id) : [...themes, t.id])}>
+                <button key={t.id} className={`theme ${on ? 'on' : ''}`} onClick={() => setThemes((prev) => (on ? prev.filter((x) => x !== t.id) : [...prev, t.id]))}>
                   <span>{t.icon}</span>
                   <b>{t.label}</b>
                   <small>{QUIZ.filter((q) => q.t === t.id).length} questions</small>
